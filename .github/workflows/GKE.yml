@@ -56,12 +56,6 @@ jobs:
       - name: Publish
         run: |-
           docker push "gcr.io/$PROJECT_ID/${IMAGE}:${{ steps.vars.outputs.docker_tag }}"
-
-      #- name: Setup Kustomize
-      #  uses: imranismail/setup-kustomize@v1
-      #  with:
-      #    kustomize-version: 4.5.4
-
       - name: Update deploy image
         working-directory: deploy
         run: |-
