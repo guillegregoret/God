@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: gke-god
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: gke-hello-app
