@@ -57,16 +57,16 @@ jobs:
         run: |-
           docker push "gcr.io/$PROJECT_ID/${IMAGE}:${{ steps.vars.outputs.docker_tag }}"
 
-      - name: Setup Kustomize
-        uses: imranismail/setup-kustomize@v1
-        with:
-          kustomize-version: 4.5.4
+      #- name: Setup Kustomize
+      #  uses: imranismail/setup-kustomize@v1
+      #  with:
+      #    kustomize-version: 4.5.4
 
-      - name: Update deploy image
-        working-directory: deploy
-        run: |-
-          kustomize edit set image "gcr.io/$PROJECT_ID/${IMAGE}:${{ steps.vars.outputs.docker_tag }}"
-          cat kustomization.yaml
-          kustomize build . | kubectl apply -f -
-          kubectl rollout status deployment/${DEPLOYMENT_NAME}
-          kubectl get services -o wide
+      #- name: Update deploy image
+      #  working-directory: deploy
+      #  run: |-
+      #    kustomize edit set image "gcr.io/$PROJECT_ID/${IMAGE}:${{ steps.vars.outputs.docker_tag }}"
+      #    cat kustomization.yaml
+      #    kustomize build . | kubectl apply -f -
+      #    kubectl rollout status deployment/${DEPLOYMENT_NAME}
+      #    kubectl get services -o wide
