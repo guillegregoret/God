@@ -18,8 +18,9 @@ router.get("/", function (req, res) {
     let date = date_ob.getDate();
     let month = date_ob.getMonth() + 1;
     let year = date_ob.getFullYear();
-    let hour = date_ob.getMinutes();
-  res.send(year + "-" + month + "-" + date + " at " + hour);
+    let hour = date_ob.getHours();
+    let min = date_ob.getMinutes();
+  res.send(year + "-" + month + "-" + date + " at " + hour + ":" + min);
 });
 
 app.use(router);
