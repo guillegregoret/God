@@ -62,11 +62,3 @@ jobs:
         run: |-
           kubectl apply -f deploy/deployment.yaml
           kubectl get services -o wide
-      - name: Deploy Issuer Staging
-        run: |-
-#          kubectl apply -f deploy/issuer-staging.yaml
-          kubectl get services -o wide
-      - name: Deploy Issuer Prod
-        run: |-
-          kubectl apply -f deploy/issuer-prod.yaml
-          kubectl get services -o wide
