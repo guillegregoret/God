@@ -39,3 +39,28 @@ spec:
       targetPort: 3000
   selector:
     app: gke-hello-app
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuard
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    #cert-manager.io/issuer: "letsencrypt-staging"
+
+spec:
+  tls:
+  - hosts:
+    - god.gregoret.com.ar
+    secretName: quickstart-example-tls
+  rules:
+  - host: god.gregoret.com.ar
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: gke-god-app-service
+            port:
+              number: 80
