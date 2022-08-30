@@ -80,7 +80,7 @@ spec:
     solvers:
     - http01:
         ingress:
-          name: web-ingress
+          name: kuard
 ---
 apiVersion: v1
 kind: Secret
@@ -90,3 +90,18 @@ type: kubernetes.io/tls
 stringData:
   tls.key: ""
   tls.crt: ""
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-production
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: guillermo@gregoret.com.ar # ❗ Replace this with your email address
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+    - http01:
+        ingress:
+          name: kuard
