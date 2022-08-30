@@ -64,18 +64,3 @@ spec:
             name: gke-god-app-service
             port:
               number: 80
----
-apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer
-metadata:
-  name: cluster-issuer-name
-spec:
-  acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: guillermo@gregoret.com.ar
-    privateKeySecretRef:
-      name: secret-name
-    solvers:
-    - http01:
-        ingress:
-          class: nginx-class-name
