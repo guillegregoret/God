@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: autopilot-cluster-1	    # Add your cluster name here.
+  GKE_CLUSTER: skynet	    # Add your cluster name here.
   GKE_ZONE: us-central1       # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-god  # Add your deployment name here.
   IMAGE: godapp
