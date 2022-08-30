@@ -48,7 +48,7 @@ metadata:
      kubernetes.io/ingress.class: gce
      kubernetes.io/ingress.allow-http: "true"
      kubernetes.io/ingress.global-static-ip-name: web-ip
-     cert-manager.io/issuer: letsencrypt-staging
+     cert-manager.io/issuer: letsencrypt-production
 
 spec:
   tls:
