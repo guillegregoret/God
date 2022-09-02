@@ -22,6 +22,9 @@ router.get("/", function (req, res) {
     let min = date_ob.getMinutes();
   res.send(year + "-" + month + "-" + date + " at " + hour + ":" + min);
 });
+router.get("/guille", function (req, res) {
+  res.send("Guilhermes");
+});
 
 app.use(router);
 

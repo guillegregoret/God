@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/arvin-358617/godapp:master-fa64e56
+        image: gcr.io/arvin-358617/godapp:$BUILD_TAB
         ports:
         - containerPort: 3000
         resources:
