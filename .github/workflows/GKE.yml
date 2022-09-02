@@ -62,6 +62,5 @@ jobs:
           kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml
           kubectl apply -f deploy/secret.yaml
           kubectl apply -f deploy/issuers.yaml
-          envsubst < deploy/deployment.yaml | kubectl apply -f -
-#         kubectl apply -f deploy/deployment.yaml
+          kubectl apply -f deploy/deployment.yaml
           kubectl get services -o wide
