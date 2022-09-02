@@ -22,7 +22,7 @@ spec:
         image:   
           valueFrom:
             configMapKeyRef:
-              name: gke_image
+              name: gkeimage
               key: latest
         ports:
         - containerPort: 3000

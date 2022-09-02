@@ -59,7 +59,7 @@ jobs:
       # Deploy sample image to the GKE cluster
       - name: Deploy
         run: |-
-          kubectl create configmap gke_image --from-literal=latest=gcr.io/arvin-358617/godapp:${{ steps.vars.outputs.docker_tag }}
+          kubectl create configmap gkeimage --from-literal=latest=gcr.io/arvin-358617/godapp:${{ steps.vars.outputs.docker_tag }}
           kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml
           kubectl apply -f deploy/secret.yaml
           kubectl apply -f deploy/issuers.yaml
