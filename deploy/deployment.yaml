@@ -19,7 +19,11 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/arvin-358617/godapp:$TAG_NAME
+        image:   
+          valueFrom:
+            configMapKeyRef:
+              name: gke_image
+              key: latest
         ports:
         - containerPort: 3000
         resources:
